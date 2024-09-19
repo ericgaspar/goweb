@@ -5,16 +5,16 @@ import (
 	"log"
 	"math/rand"
 	"net/http"
-	"time"
+	"os"
 
 	"github.com/joho/godotenv"
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	rand.Seed(time.Now().UnixNano())
-	randomNumber := rand.Intn(10000000)
+	randomNumber := rand.Intn(1000)
 	fmt.Fprintf(w, "Random Number: %d", randomNumber)
 }
+
 func main() {
 
 	err := godotenv.Load()
